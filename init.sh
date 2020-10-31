@@ -14,7 +14,7 @@ trap exit_trap EXIT
 # determine OS
 OS="unknown"
 
-if [[ $(grep Microsoft /proc/version) ]]; then
+if [[ -f /proc/version ]] && [[ $(grep Microsoft /proc/version) ]]; then
     OS="win"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     OS="osx"
