@@ -1,6 +1,4 @@
-".vimrc
-
-" yaml fix
+"yaml fix
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 set number
@@ -16,9 +14,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+Plug 'ayu-theme/ayu-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/syntastic'
-Plug 'valloric/youcompleteme'
 call plug#end()
+
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
 
