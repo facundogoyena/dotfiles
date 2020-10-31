@@ -19,3 +19,7 @@ function start_agent {
     /usr/bin/ssh-add $HOME/.ssh/*_rsa
 }
 
+if [[ -f "${SSH_ENV}" ]]; then
+    . "${SSH_ENV}" > /dev/null
+fi
+
