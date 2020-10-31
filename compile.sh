@@ -48,6 +48,7 @@ find . -type f -name "*.compiled" -delete
 for file in **/*-{win,unix,osx}; do
     basefile="${file%-[win,unix,osx]*}"
     outputfile="$file.compiled"
+    fileos="${file##*-}"
 
     if [ ! -f $basefile ]; then
         cat $file > $outputfile
@@ -55,7 +56,9 @@ for file in **/*-{win,unix,osx}; do
         cat $basefile $file > $outputfile
     fi
 
-    sed -i "s/\#REPLACE_WIN_HOME\#/$WIN_HOME_REPLACE/" $outputfile
+    if [[ "$fileos" == "win" ]]; then
+        sed -i "s/\#REPLACE_WIN_HOME\#/$WIN_HOME_REPLACE/" $outputfile
+    fi
 done
 
 # go back to original dir
