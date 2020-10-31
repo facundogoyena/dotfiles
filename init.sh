@@ -81,12 +81,14 @@ function trylinkfile {
 declare -A mappings
 
 mappings[".vimrc"]="$HOME/.vimrc"
+mappings[".hushlogin"]="$HOME/.hushlogin"
 mappings["alacritty.yml"]="$HOME/.config/alacritty/alacritty.yml"
 
 if [[ "$OS" == "win" ]]; then
     declare -A wsl_mappings
 
     wsl_mappings[".vimrc"]="$WSL_HOME/.vimrc"
+    wsl_mappings[".hushlogin"]="$WSL_HOME/.hushlogin"
     wsl_mappings["alacritty.yml"]="$WSL_HOME/AppData/Roaming/alacritty/alacritty.yml"
 fi
 
