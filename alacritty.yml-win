@@ -2,5 +2,5 @@
 shell:
   program: "C:\\Windows\\System32\\wsl.exe"
 
-working_directory: "C:\\Users\\facun"
+working_directory: "#REPLACE_WIN_HOME#"
 
