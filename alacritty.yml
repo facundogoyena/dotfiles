@@ -63,11 +63,6 @@ background_opacity: 0.95
 cursor:
   unfocused_hollow: true
 
-shell:
-  program: "C:\\Windows\\System32\\wsl.exe"
-
-working_directory: "C:\\Users\\facun"
-
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
   - { mouse: Right, action: Copy }
