@@ -1,0 +1,6 @@
+
+shell:
+  program: "C:\\Windows\\System32\\wsl.exe"
+
+working_directory: "C:\\Users\\facun"
+

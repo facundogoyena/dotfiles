@@ -47,6 +47,7 @@ colorscheme ayu
 let g:airline_theme='base16'
 
 " Key mappings
+set pastetoggle=<F2>
 "nnoremap <C-s> :source $MYVIMRC<CR>
 " ^ not working on windows for some reason :(
 
