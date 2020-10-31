@@ -26,25 +26,16 @@ shopt -s nocaseglob
 # clear all compiled files
 find . -type f -name "*.compiled" -delete
 
-has_warnings=0
-
 # determine all files to combine
 for file in **/*-{win,unix,osx}; do
     basefile="${file%-[win,unix,osx]*}"
     outputfile="$file.compiled"
 
     if [ ! -f $basefile ]; then
-        has_warnings=1
-        echo "Warning: Base file for $file not found"
+        cat $file > $outputfile
         continue
     fi
 
     cat $basefile $file > $outputfile
 done
-
-if [ $has_warnings -eq 1 ]; then
-    echo "Completed with warnings"
-else
-    echo "Completed successfully"
-fi
 
