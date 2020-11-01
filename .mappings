@@ -4,6 +4,7 @@
 declare -A mappings
 
 mappings[".aliases"]="$HOME/.aliases"
+mappings[".bashrc"]="$HOME/.bashrc"
 mappings[".curlrc"]="$HOME/.curlrc"
 mappings[".env"]="$HOME/.env"
 mappings[".functions"]="$HOME/.functions"
@@ -17,6 +18,7 @@ if [[ "$OS" == "win" ]]; then
     declare -A wsl_mappings
 
     wsl_mappings[".aliases"]="$WSL_HOME/.aliases"
+    wsl_mappings[".bashrc"]="$WSL_HOME/.bashrc"
     wsl_mappings[".curlrc"]="$WSL_HOME/.curlrc"
     wsl_mappings[".env"]="$WSL_HOME/.env"
     wsl_mappings[".functions"]="$WSL_HOME/.functions"
