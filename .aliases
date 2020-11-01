@@ -11,11 +11,11 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # general
-l='ls -lah'
-la='ls -lAh'
-ll='ls -alF'
-ls='ls --color=tty'
-lsa='ls -lah'
+alias l='ls -lah'
+alias la='ls -lAh'
+alias ll='ls -alF'
+alias ls='ls --color=tty'
+alias lsa='ls -lah'
 
 # git
 alias g="git"
