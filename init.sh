@@ -90,18 +90,25 @@ source .mappings
 #   - under WSL, it will copy files to the windows folder and create links on the linux install
 #   - directly on linux/osx, it will create links
 for source_file in ${!mappings[@]}; do
+    if [[ ! -f "$source_file" ]]; then
+        echo "File \"$source_file\" not found"
+        continue
+    fi
+
     target_file="${mappings[$source_file]}"
 
     # if running under WSL, we'll need to use other mappings
     if [[ "$OS" == "win" ]]; then
         wsl_source_file=$source_file
         target_wsl_file="${wsl_mappings[$source_file]}"
+        
+        if [[ "$target_wsl_file" != "" ]]; then
+            if [[ -f "$wsl_source_file-$OS.compiled" ]]; then
+                wsl_source_file="$wsl_source_file-$OS.compiled"
+            fi
 
-        if [[ -f "$wsl_source_file-$OS.compiled" ]]; then
-            wsl_source_file="$wsl_source_file-$OS.compiled"
+            trycopyfile $SCRIPT_DIR/$wsl_source_file $target_wsl_file
         fi
-
-        trycopyfile $SCRIPT_DIR/$wsl_source_file $target_wsl_file
     elif [[ -f "$source_file-$OS.compiled" ]]; then
         source_file="$source_file-$OS.compiled"
     fi

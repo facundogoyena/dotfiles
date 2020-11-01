@@ -3,15 +3,26 @@
 # mappings
 declare -A mappings
 
-mappings[".vimrc"]="$HOME/.vimrc"
+mappings[".aliases"]="$HOME/.aliases"
+mappings[".curlrc"]="$HOME/.curlrc"
+mappings[".env"]="$HOME/.env"
+mappings[".functions"]="$HOME/.functions"
 mappings[".hushlogin"]="$HOME/.hushlogin"
+mappings[".vimrc"]="$HOME/.vimrc"
+mappings[".zshrc"]="$HOME/.zshrc"
+mappings["ssh-agent.sh"]="$HOME/ssh-agent.sh"
 mappings["alacritty.yml"]="$HOME/.config/alacritty/alacritty.yml"
 
 if [[ "$OS" == "win" ]]; then
     declare -A wsl_mappings
 
-    wsl_mappings[".vimrc"]="$WSL_HOME/.vimrc"
+    wsl_mappings[".aliases"]="$WSL_HOME/.aliases"
+    wsl_mappings[".curlrc"]="$WSL_HOME/.curlrc"
+    wsl_mappings[".env"]="$WSL_HOME/.env"
+    wsl_mappings[".functions"]="$WSL_HOME/.functions"
     wsl_mappings[".hushlogin"]="$WSL_HOME/.hushlogin"
+    wsl_mappings[".vimrc"]="$WSL_HOME/.vimrc"
+    wsl_mappings["ssh-agent.sh"]="$WSL_HOME/ssh-agent.sh"
     wsl_mappings["alacritty.yml"]="$WSL_HOME/AppData/Roaming/alacritty/alacritty.yml"
 fi
 

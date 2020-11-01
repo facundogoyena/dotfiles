@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+source .functions
+
+# navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# general
+l='ls -lah'
+la='ls -lAh'
+ll='ls -alF'
+ls='ls --color=tty'
+lsa='ls -lah'
+
+# git
+alias g="git"
+alias gaa="git add ."
+alias gs="git status"
+alias gm="git commit -m \""
+alias gpull="git pull"
+alias gpush="git push"
+alias gfetch="git fetch"
+alias gnah="git reset --hard && git clean -df"
+alias gprune="git remote prune origin"
+
+# ip address
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias getip="myip"
+
+# macOS specific aliases
+if [[ "$(is_osx)" == "1" ]]; then
+    # allow sudo other aliases
+    alias sudo='sudo '
+
+    # Canonical hex dump; some systems have this symlinked
+    command -v hd > /dev/null || alias hd="hexdump -C"
+
+    # macOS has no `md5sum`, so use `md5` as a fallback
+    command -v md5sum > /dev/null || alias md5sum="md5"
+
+    # macOS has no `sha1sum`, so use `shasum` as a fallback
+    command -v sha1sum > /dev/null || alias sha1sum="shasum"
+
+    # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+    alias stfu="osascript -e 'set volume output muted true'"
+    alias pumpitup="osascript -e 'set volume output volume 100'"
+
+    # Lock the screen (when going AFK)
+    alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+fi
+
