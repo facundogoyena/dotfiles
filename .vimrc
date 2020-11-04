@@ -37,6 +37,10 @@ set smartindent
 set hls is
 set cursorline
 
+" trailing whitespace and tabs
+exec "set listchars=tab:\uBB\uBB,trail:\uB7"
+set list
+
 " Yaml fix
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
