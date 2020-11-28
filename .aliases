@@ -27,6 +27,8 @@ alias gpush="git push"
 alias gfetch="git fetch"
 alias gnah="git reset --hard && git clean -df"
 alias gprune="git remote prune origin"
+alias gc="git checkout"
+alias gcb="git checkout -b"
 
 # ip address
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
