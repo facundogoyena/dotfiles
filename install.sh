@@ -68,8 +68,7 @@ fi
 # vim/nvim
 rm -Rf ~/.vim ~/.vimrc
 rm -Rf ~/config/nvim
-mkdir -p ~/.config/nvim
-cp -Rf src/nvim ~/.config/nvim
+cp -Rf src/nvim ~/.config/
 
 if [ -z "$NO_NVIM" ]; then
     cat src/partials/vim-to-nvim.sh >> ~/.bashrc
@@ -80,6 +79,17 @@ if grep -q MINGW64_NT /proc/version; then
     rm -Rf ~/.inputrc ~/.minttyrc
     cp -Rf src/.inputrc ~/.inputrc
     cp -Rf src/.minttyrc ~/.minttyrc
+fi
+
+# install choco
+if [ -z "$MINIMAL" ] && grep -q MINGW64_NT /proc/version && [ -z "$NO_NVIM" ]; then
+    if ! command -v choco &> /dev/null; then
+        winget install --accept-source-agreements chocolatey.chocolatey
+    fi
+
+    if ! command -v gcc &> /dev/null; then
+        choco install -y ripgrep wget fd mingw make
+    fi
 fi
 
 # only for full quickstart

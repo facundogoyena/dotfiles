@@ -37,3 +37,6 @@ alias gppull="gprune && gpull"
 # ip address
 alias myip="curl ipinfo.io/ip"
 alias getip="myip"
+
+# config
+export XDG_CONFIG_HOME="$HOME/.config/"
