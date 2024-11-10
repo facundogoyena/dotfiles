@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # SSH
 SSH_ENV=$HOME/.ssh/environment
 

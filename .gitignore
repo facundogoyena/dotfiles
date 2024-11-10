@@ -1,9 +1,7 @@
 *.swp
-*.compiled
 .env
 
 .DS_Store
 Desktop.ini
 ._*
 Thumbs.db
-
